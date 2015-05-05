@@ -17,7 +17,7 @@ Then clone this respository <br>
 Use you Web Browser to set up the database<br>
 http://127.0.0.1/phpmyadmin/
 
-Create a database called poll and use the files in /database to import the databse structure to poll
+Create a database called poll and use the file in /database to import the database structure to poll
 
 Edit ```/includes/db.php```<br>
 ```$servername = "localhost"; // this will ususally be 'localhost', but can sometimes differ```<br>
@@ -34,3 +34,5 @@ Edit ```/includes/base.php```<br>
 
 Use a Web Browser to navigate to<br>
 http://127.0.0.1/Elo-voting-system/
+
+Register a new user to start voting
