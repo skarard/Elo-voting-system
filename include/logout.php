@@ -1,2 +1,2 @@
 <?php include "base.php"; $_SESSION = array(); session_destroy(); ?>
-<meta http-equiv="refresh" content="0;/polls/index.php">
+<meta http-equiv="refresh" content="0;/Elo-voting-system/index.php">
