@@ -1,0 +1,80 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+.party {
+    float:left;
+    width:49%;
+    position:relative;
+}
+#error {
+    text-align: center;
+}
+.party span {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+}
+.party img {
+	width:128px;
+	height:128px;
+	float:left;
+	margin-right:15px;
+}
+
+.party h2, .party h3, .party h4 {
+	margin-top:0px;
+}
+
+.header {
+	height:50px;
+	background: #efefef;
+	/*position:fixed;
+	top:0;*/
+	width:100%;
+	z-index:5;
+}
+.padd {
+	margin: 10px 25px;
+}
+#leaderboard {
+	position:absolute;
+	top:70px;
+	right:0px;
+	width:250px;
+	height:500px;
+	overflow: hidden;
+	background:#fff;
+	z-index:10;
+	border:3px solid #ebebeb;
+}
+.leaderboardclick {
+	float:right;
+}
+.title {
+	float:left;
+}
+hr {
+	height: 1px;
+    border: 0; 
+    border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; 
+}
+
+.wrap {
+	max-width:920px;
+	margin:0 auto;
+}
+.gap {
+	margin-top: 100px;
+}
+.twocolumn {
+	width:49%;
+	float:left;
+}
+.error {
+	padding:0 15%;
+}
