@@ -1,5 +1,5 @@
-# Elo-voting-system
-A website for using the Elo-voting-system
+# Voteelo
+A website for a voting system that use the Elo rating system for political parties running for the 2015 UK General Election
 
 #Setting Up
 Open up a terminal
