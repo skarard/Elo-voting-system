@@ -12,7 +12,7 @@ Navigate to your ```httpdocs``` / ```www``` folder<br>
 ```cd /var/www```
 
 Then clone this respository <br>
-```git clone https://github.com/skarard/Elo-voting-system```
+```git clone https://github.com/skarard/Voteelo```
 
 Use you Web Browser to set up the database<br>
 http://127.0.0.1/phpmyadmin/
@@ -33,6 +33,6 @@ Edit ```/includes/base.php```<br>
 
 
 Use a Web Browser to navigate to<br>
-http://127.0.0.1/Elo-voting-system/
+http://127.0.0.1/Voteelo/
 
 Register a new user to start voting
