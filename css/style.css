@@ -55,6 +55,9 @@ html, body {
 	float:right;
 }
 .title {
+	
+}
+.loggedin {
 	float:left;
 }
 hr {

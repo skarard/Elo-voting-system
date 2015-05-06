@@ -1,5 +1,11 @@
 <?php 
+$basedir = basename(dirname($_SERVER['PHP_SELF']));
+
 require "include/base.php";
+
+if(isset($_GET['logout'])) {
+	include "include/logout.php";
+}
 
 require "include/rating.php";
 require "include/db.php";

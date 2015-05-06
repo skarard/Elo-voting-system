@@ -16,7 +16,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     $_SESSION['Username'] = $username;
     $_SESSION['EmailAddress'] = $email;
     $_SESSION['LoggedIn'] = 1;
-    echo "<meta http-equiv=\"refresh\" content=\"0;/polls/index.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;index.php\">";
   } else {
     echo "<div class=\"error\">";
     echo "<h1>Error</h1>";
