@@ -81,3 +81,13 @@ hr {
 .error {
 	padding:0 15%;
 }
+.login .column {
+	float:left;
+	margin-right: 15px
+}
+.login {
+	float:right;
+}
+.login label {
+	display:block;
+}

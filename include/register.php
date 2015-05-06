@@ -1,23 +1,22 @@
 <?php
-if(!empty($_POST['username']) && !empty($_POST['password'])){
-	$username = mysqli_real_escape_string($mysqli, $_POST['username']);
+if(!empty($_POST['email']) && !empty($_POST['password'])){
+	$fullname = mysqli_real_escape_string($mysqli, $_POST['fullname']);
     $password = md5(mysqli_real_escape_string($mysqli, $_POST['password']));
     $email = mysqli_real_escape_string($mysqli, $_POST['email']);
     
-	 $checkusername = mysqli_query($mysqli, "SELECT * FROM users WHERE Username = '".$username."'");
+	 $checkemail = mysqli_query($mysqli, "SELECT * FROM users WHERE EmailAddress = '".$email."'");
      
-     if(mysqli_num_rows($checkusername) == 1)
+     if(mysqli_num_rows($checkemail) == 1)
      {
      	echo "<h1>Error</h1>";
-        echo "<p>Sorry, that username is taken. Please go back and try again.</p>";
-        return;
+        echo "<p>Sorry, that email is taken. Please go back and try again.</p>";
      }
      else
      {
-     	$registerquery = mysqli_query($mysqli, "INSERT INTO users (Username, Password, EmailAddress) VALUES('".$username."', '".$password."', '".$email."')");
+     	$registerquery = mysqli_query($mysqli, "INSERT INTO users (FullName, Password, EmailAddress) VALUES('".$fullname."', '".$password."', '".$email."')");
         if($registerquery)
         {
-            $_SESSION['Username'] = $username;
+            $_SESSION['FullName'] = $fullname;
             $_SESSION['EmailAddress'] = $email;
             $_SESSION['LoggedIn'] = 1;
             
@@ -41,9 +40,9 @@ else
     
 	<form method="post" action="index.php?register" name="registerform" id="registerform">
 	<fieldset>
-		<label for="username">Username:</label><input type="text" name="username" id="username" /><br />
-		<label for="password">Password:</label><input type="password" name="password" id="password" /><br />
+		<label for="fullname">Full Name:</label><input type="text" name="fullname" id="fullname" /><br />
         <label for="email">Email Address:</label><input type="text" name="email" id="email" /><br />
+		<label for="password">Password:</label><input type="password" name="password" id="password" /><br />
 		<input type="submit" name="register" id="register" value="Register" />
 	</fieldset>
 	</form>
