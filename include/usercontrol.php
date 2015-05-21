@@ -11,7 +11,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])) {
 
   if(mysqli_num_rows($checklogin) == 1){
     $row = mysqli_fetch_array($checklogin);
-    $email = $row['EmailAddress'];
+    $fullname = $row['FullName'];
 
     $_SESSION['FullName'] = $fullname;
     $_SESSION['EmailAddress'] = $email;

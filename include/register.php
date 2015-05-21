@@ -1,8 +1,8 @@
 <?php
-if(!empty($_POST['email']) && !empty($_POST['password'])){
-	$fullname = mysqli_real_escape_string($mysqli, $_POST['fullname']);
-    $password = md5(mysqli_real_escape_string($mysqli, $_POST['password']));
-    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+if(!empty($_POST['regemail']) && !empty($_POST['regnewpassword'])){
+	$fullname = mysqli_real_escape_string($mysqli, $_POST['regfullname']);
+    $password = md5(mysqli_real_escape_string($mysqli, $_POST['regnewpassword']));
+    $email = mysqli_real_escape_string($mysqli, $_POST['regemail']);
     
 	 $checkemail = mysqli_query($mysqli, "SELECT * FROM users WHERE EmailAddress = '".$email."'");
      
@@ -33,18 +33,28 @@ if(!empty($_POST['email']) && !empty($_POST['password'])){
 else
 {
 	?>
-    
    <h1>Register</h1>
     
    <p>Please enter your details below to register.</p>
     
 	<form method="post" action="index.php?register" name="registerform" id="registerform">
 	<fieldset>
-		<label for="fullname">Full Name:</label><input type="text" name="fullname" id="fullname" /><br />
-        <label for="email">Email Address:</label><input type="text" name="email" id="email" /><br />
-		<label for="password">Password:</label><input type="password" name="password" id="password" /><br />
-		<input type="submit" name="register" id="register" value="Register" />
-	</fieldset>
+        <div class="input">
+        <div class="inputtext" id="regfullnamehide">Full Name</div>
+		<input type="text" name="regfullname" id="regfullname" onfocus="hideFocus('Full Name','regfullname');" onblur="hideFocus('Full Name','regfullname');" value=" "/>
+        </div>
+        <div class="input">
+        <div class="inputtext" id="regemailhide">Email Address</div>
+        <input type="text" name="regemail" id="regemail" onfocus="hideFocus('Email Address','regemail');" onblur="hideFocus('Email Address','regemail');" value=" "/>
+		</div>
+        <div class="input">
+        <div class="inputtext" id="regnewpasswordhide">New Password</div>
+        <input type="password" name="regnewpassword" id="regnewpassword" onfocus="hideFocus('New Password','regnewpassword');" onblur="hideFocus('New Password','regnewpassword');" value=" "/>
+		</div>
+        <div class="input">
+        <input type="submit" name="register" id="register" value="Register" />
+	   </div>
+    </fieldset>
 	</form>
     
    <?php
