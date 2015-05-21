@@ -91,7 +91,7 @@ hr {
 	display:block;
 }
 
-#registerform input {
+#registerform input, #additionalform input {
 	position:absolute;
 	top:0;
 	left:0;
