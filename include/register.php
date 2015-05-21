@@ -1,20 +1,20 @@
 <?php
 if(!empty($_POST['email']) && !empty($_POST['password'])){
-	$fullname = mysqli_real_escape_string($mysqli, $_POST['fullname']);
-    $password = md5(mysqli_real_escape_string($mysqli, $_POST['password']));
-    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+	$fullname = $conn->real_escape_string($_POST['fullname']);
+    $password = md5($conn->real_escape_string($_POST['password']));
+    $email = $conn->real_escape_string($_POST['email']);
     
-	 $checkemail = mysqli_query($mysqli, "SELECT * FROM users WHERE EmailAddress = '".$email."'");
+	 $checkemail = "SELECT * FROM users WHERE EmailAddress = '".$email."'";
      
-     if(mysqli_num_rows($checkemail) == 1)
+     if(mysqli_num_rows($conn->query($checkemail)) == 1)
      {
      	echo "<h1>Error</h1>";
         echo "<p>Sorry, that email is taken. Please go back and try again.</p>";
      }
      else
      {
-     	$registerquery = mysqli_query($mysqli, "INSERT INTO users (FullName, Password, EmailAddress) VALUES('".$fullname."', '".$password."', '".$email."')");
-        if($registerquery)
+     	$registerquery = "INSERT INTO users (FullName, Password, EmailAddress) VALUES('".$fullname."', '".$password."', '".$email."')";
+        if($conn->query($registerquery))
         {
             $_SESSION['FullName'] = $fullname;
             $_SESSION['EmailAddress'] = $email;

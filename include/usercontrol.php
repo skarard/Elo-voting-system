@@ -4,13 +4,13 @@ if (isset($_GET['register'])){
   return;
 }
 if(!empty($_POST['email']) && !empty($_POST['password'])) {
-  $email = mysqli_real_escape_string($mysqli, $_POST['email']);
-  $password = md5(mysqli_real_escape_string($mysqli, $_POST['password']));
+  $email = $conn->real_escape_string($_POST['email']);
+  $password = md5($conn->real_escape_string($_POST['password']));
 
-  $checklogin = mysqli_query($mysqli, "SELECT * FROM users WHERE EmailAddress = '".$email."' AND Password = '".$password."'");
+  $checklogin = "SELECT * FROM users WHERE EmailAddress = '".$email."' AND Password = '".$password."'";
 
-  if(mysqli_num_rows($checklogin) == 1){
-    $row = mysqli_fetch_array($checklogin);
+  if(mysqli_num_rows($conn->query($checklogin) == 1){
+    $row = mysqli_fetch_array($conn->query($checklogin);
     $email = $row['EmailAddress'];
 
     $_SESSION['FullName'] = $fullname;
