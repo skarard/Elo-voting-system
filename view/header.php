@@ -1,7 +1,7 @@
 <div class="header">
 	<div class="wrap padd">
 		<div class="twocolumn">
-			<div class="title">UK General Elections</div>
+			<div class="title">Voteelo</div>
 		</div>
 		<div class="twocolumn">
 			<?php if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['EmailAddress'])){
