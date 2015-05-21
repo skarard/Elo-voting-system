@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 05, 2015 at 09:31 PM
+-- Generation Time: May 21, 2015 at 07:59 PM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.9
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `parties` (
   `wins` int(100) NOT NULL,
   `leader` varchar(26) NOT NULL,
   `keypoints` varchar(1024) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`,`score`,`wins`),
   KEY `title` (`party`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
@@ -43,12 +43,12 @@ CREATE TABLE IF NOT EXISTS `parties` (
 --
 
 INSERT INTO `parties` (`id`, `party`, `image`, `score`, `wins`, `leader`, `keypoints`) VALUES
-(1, 'Labour', 'labour.jpg', 1000.000000000000, 0, 'Ed Milliband', 'Education'),
-(2, 'SNP', 'snp.jpg', 1000.000000000000, 0, 'Nicola Sturgeon', 'Free Scotland'),
-(3, 'Conservatives', 'conservatives.jpg', 1000.000000000000, 0, 'David Cameron', 'Privatise'),
-(4, 'Lib Dems', 'libdem.jpg', 1000.000000000000, 0, 'Nick Clegg', 'Things'),
-(5, 'Greens', 'green.jpg', 1000.000000000000, 0, 'Natalie Bennett', 'Ecology'),
-(6, 'UKIP', 'ukip.jpg', 1000.000000000000, 0, 'Nigel Farage', 'Britain for British');
+(1, 'Labour', 'labour.jpg', 1000, 0, 'Ed Milliband', 'Education'),
+(2, 'SNP', 'snp.jpg', 1000, 0, 'Nicola Sturgeon', 'Free Scotland'),
+(3, 'Conservatives', 'conservatives.jpg', 1000, 0, 'David Cameron', 'Privatise'),
+(4, 'Lib Dems', 'libdem.jpg', 1000, 0, 'Nick Clegg', 'Things'),
+(5, 'Greens', 'green.jpg', 1000, 0, 'Natalie Bennett', 'Ecology'),
+(6, 'UKIP', 'ukip.jpg', 1000, 0, 'Nigel Farage', 'Britain for British');
 
 -- --------------------------------------------------------
 
@@ -61,6 +61,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `FullName` varchar(65) NOT NULL,
   `Password` varchar(32) NOT NULL,
   `EmailAddress` varchar(255) NOT NULL,
+  `fullreg` tinyint(1) NOT NULL,
+  `Address` text NOT NULL,
+  `NationalInsurance` text NOT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
