@@ -8,10 +8,10 @@ if(!empty($_POST['email']) && !empty($_POST['password'])) {
   $password = md5($conn->real_escape_string($_POST['password']));
 
   $checklogin = "SELECT * FROM users WHERE EmailAddress = '".$email."' AND Password = '".$password."'";
-
-  if(mysqli_num_rows($conn->query($checklogin) == 1){
-    $row = mysqli_fetch_array($conn->query($checklogin);
-    $email = $row['EmailAddress'];
+  
+  if(mysqli_num_rows($conn->query($checklogin)) == 1){
+    $row = mysqli_fetch_array($conn->query($checklogin));
+    $fullname = $row['FullName'];
 
     $_SESSION['FullName'] = $fullname;
     $_SESSION['EmailAddress'] = $email;

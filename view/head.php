@@ -13,5 +13,20 @@
     }
 //-->
 </script>
+<script type="text/javascript">
+	function hideFocus(str, id) {
+		var a = document.getElementById(id);
+		var b = document.getElementById(id+'hide');
+		if (a.value == ' ') {
+			b.style.display = 'none';
+			a.value = '';
+			a.style.color = 'rgba(1,1,1,1)';
+		} else if (a.value == '') {
+			b.style.display = 'block';
+			a.value = ' ';
+			a.style.color = 'rgba(0,0,0,0)';
+		}
+	}
+</script> 
 </head>
 <body>
